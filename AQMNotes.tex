@@ -1,0 +1,92 @@
+\documentclass[twoside,a5paper,11pt]{article}
+
+\usepackage[top=1.1in,bottom=0.9in,left=1in,right=0.8in]{geometry}
+
+\usepackage{fontspec, xunicode, xltxtra}  
+\usepackage{xeCJK}
+
+%\usepackage{geometry}                % See geometry.pdf to learn the layout options. There are lots.
+%\geometry{letterpaper}                   % ... or a4paper or a5paper or ... 
+%\geometry{landscape}                % Activate for for rotated page geometry
+\usepackage[parfill]{parskip}    % Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{url}
+
+\usepackage{mathrsfs}
+\usepackage{imakeidx}
+
+% Will Robertson's fontspec.sty can be used to simplify font choices.
+% To experiment, open /Applications/Font Book to examine the fonts provided on Mac OS X,
+% and change "Hoefler Text" to any of these choices.
+
+\usepackage{fontspec,xltxtra,xunicode}
+\defaultfontfeatures{Mapping=tex-text}
+\setromanfont[Mapping=tex-text]{Hoefler Text}
+\setsansfont[Scale=MatchLowercase,Mapping=tex-text]{Gill Sans}
+\setmonofont[Scale=MatchLowercase]{Andale Mono}
+
+\makeindex
+
+%\setmainfont{Microsoft YaHei}  
+
+\setmainfont{STKaiti}
+
+
+\title{量子力学II}
+\author{@季燕江}
+\date{\today}                                           % Activate to display a given date or no date
+
+\begin{document}
+
+\pagestyle{headings}
+
+\maketitle
+
+
+\begin{abstract}
+
+本讲稿（读书笔记）基于樱井教授所著的《现代量子力学》（J. J. Sakurai, Modern Quantum Mechanics, Revised Edition）。
+
+\end{abstract}
+
+\tableofcontents{1}
+
+版本：1.0
+
+豆瓣小站：\url{http://site.douban.com/223228/}
+
+\input{SGExperiment/SGExperiment.tex}
+
+\input{Translation/Translation.tex}
+
+\input{TimeEvolution/TimeEvolution.tex}
+
+%%%%\input{TimeEvolution/CoherentState.tex}
+
+\input{PathIntegral/Propagators.tex}
+
+\input{PathIntegral/PathIntegral.tex}
+
+\input{AngularMomentum/Rotation.tex}
+
+\input{AngularMomentum/AdditionofAM.tex}
+
+\input{Symmetry/Symmetry.tex}
+
+\input{Symmetry/TimeReversalSymmetry.tex}
+
+\input{Scattering/InteractionPicture.tex}
+
+\input{Scattering/FormalTheory.tex}
+
+\input{Scattering/TimeDependentScattering.tex}
+
+\printindex
+
+@季燕江
+
+豆瓣小站：\url{http://site.douban.com/223228/}
+
+\end{document}  
