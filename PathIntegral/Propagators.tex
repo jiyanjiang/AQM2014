@@ -1,0 +1,227 @@
+\section{传播子}
+
+\subsection{绘景回顾}
+
+薛定谔绘景（S.P.）下，态矢量$\left| \alpha, t \right\rangle$含时，力学量不含时，态矢量随时间的演化符合薛定谔方程\index{Schr\"{o}dinger equation：薛定谔方程}。
+
+\begin{equation}
+i \hbar \frac{\partial }{\partial t} \left| \alpha, t \right\rangle = H \left| \alpha, t \right\rangle 
+\end{equation}
+
+其解可表示为：
+
+\begin{equation}
+\left| \alpha, t \right\rangle = U(t) \left| \alpha \right\rangle
+\end{equation}
+
+这里：
+
+\begin{equation}
+U(t) = e^{-iHt / \hbar}
+\end{equation}
+
+力学量$A$的本征值问题，
+
+\begin{equation}
+A \left| a' \right\rangle = a' \left| a' \right\rangle 
+\end{equation}
+
+定义了基矢（basis）$\left| a' \right\rangle$，$\left| a' \right\rangle$也不含时。
+
+态矢量$\left| \alpha, t \right\rangle$含时，可以用基矢$\left| a' \right\rangle$展开：
+
+\begin{equation}
+\left| \alpha, t \right\rangle = \sum\limits_{a'} \left| a' \right\rangle \left\langle a' | \alpha, t \right\rangle 
+\end{equation}
+
+这里含时的部分被包含在因子$\left\langle a' | \alpha, t \right\rangle $中。
+
+对海森堡绘景（H.P.）而言，态矢量不含时，比如就取$t=0$时刻时候的态矢量，记作：$\left| \alpha \right\rangle$。力学量含时，
+
+\begin{equation}
+A(t) = U^\dagger (t) A U (t)
+\end{equation}
+
+符合海森堡运动方程，
+
+\begin{equation}
+i \hbar \dot A = [A, H]
+\end{equation}
+
+现在来考虑H.P.下力学量$A(t)$的本征值问题：
+
+\begin{equation}
+A(t) \left| a', t \right\rangle = a' \left| a', t \right\rangle
+\end{equation}
+
+考虑到，
+
+\begin{equation}
+U^\dagger A U U^\dagger \left| a' \right\rangle = a' U^\dagger \left| a' \right\rangle
+\end{equation}
+
+H.P.下的基矢是：
+
+\begin{equation}
+\left| a', t \right\rangle = U^\dagger \left| a' \right\rangle
+\end{equation}
+
+看起来和S.P.下态矢量$\left| \alpha , t \right\rangle$随时间的演化$\left| \alpha , t \right\rangle = U \left| \alpha \right\rangle$类似，但方向正好相反。
+
+\subsection{传播子}
+
+在S.P.下，给定量子系统$H = \frac{p^2}{2m} + V$，考虑态矢量由$\left| \alpha , t_0 \right\rangle$演化到$\left| \alpha , t \right\rangle$，
+
+\begin{equation}
+\left| \alpha , t \right\rangle = e^{-i H (t - t_0) / \hbar}  \left| \alpha , t_0 \right\rangle
+\end{equation}
+
+考虑$[A, H ] = 0$，基矢$\left| a' \right\rangle$同时也是$H$的本征矢，$H \left| a' \right\rangle = E_{a'} \left| a' \right\rangle $，因此：
+
+\begin{equation}
+\left| \alpha , t \right\rangle = \sum\limits_{a'} \left| a' \right\rangle \left\langle a' | \alpha, t_0 \right\rangle e^{-i E_{a'} (t - t_0) / \hbar}
+\end{equation}
+
+左乘$\left\langle x' \right|$，把上式变到位置表象，
+
+\begin{equation}
+\left\langle x' | \alpha, t \right\rangle = \sum\limits_{a'} \left\langle x' | a' \right\rangle \left\langle a' | \alpha, t_0 \right\rangle e^{- i E_{a'} (t - t_0) / \hbar}  
+\end{equation}
+
+把因子$\left\langle a' | \alpha, t_0 \right\rangle$表示为位置表象，
+
+\begin{equation}
+\left\langle a' | \alpha, t_0 \right\rangle = \int d^3 x \left\langle a' | x' \right\rangle \left\langle x' | \alpha, t_0 \right\rangle 
+\end{equation}
+
+为了避免歧义，把$\left\langle x' | \alpha, t \right\rangle$中的$x'$改记为$x''$，
+
+\begin{equation}
+\left\langle x'' | \alpha, t \right\rangle = \int d^3 x' \sum\limits_{a'}  \left\langle x'' | a' \right\rangle \left\langle a' | x' \right\rangle e^{- i E_{a'} (t - t_0) / \hbar} \left\langle x' | \alpha, t_0 \right\rangle
+\end{equation}
+
+定义积分的核（Kernel）为$K(x'', t; x', t_0)$，
+
+\begin{equation}
+K(x'', t; x', t_0) = \sum\limits_{a'}  \left\langle x'' | a' \right\rangle \left\langle a' | x' \right\rangle e^{- i E_{a'} (t - t_0) / \hbar}
+\end{equation}
+
+并用波动力学中的波函数对上上式进行改写，
+
+\begin{equation}
+\psi_\alpha (x'', t ) = \int d^3 x' K(x'', t; x', t_0) \psi_\alpha (x', t_0 )
+\end{equation}
+
+我们称$K$为传播子\index{Propagator：传播子}，即描述由时空中$x', t_0$传播到$x'', t$的行为。传播子与初始时刻的波函数$\psi_\alpha (x', t_0 )$无关，它是物理系统（$H$，这里就是$V$）本身性质的反映。
+
+只要知道$\psi_\alpha (x', t_0 )$和$K$，就可知道$t > t_0$时刻的波函数$\psi_\alpha (x'', t )$。即是决定的，是因果律的。
+
+\begin{equation*}
+i \xrightarrow{K}{} f
+\end{equation*}
+
+\subsection{传播子的性质}
+
+（1）对$t > t_0$，传播子$K$符合薛定谔方程（S.E.）
+
+（2）当$t \to t_0$时，传播子是德尔塔函数，
+
+\begin{equation}
+\lim\limits_{t \to t_0} K = \lim\limits_{t \to t_0} \sum\limits_{a'} \left\langle x'' | a' \right\rangle \left\langle a' | x' \right\rangle e^{- i E_a' (t - t_0) / \hbar} = \left\langle x'' | x' \right\rangle
+\end{equation}
+
+（3）$K$可表示为：
+
+\begin{equation}
+K = \left\langle x'' \right| e^{- i H (t - t_0) / \hbar}  \left| x' \right\rangle  
+\end{equation}
+
+证明：
+
+\begin{equation*}
+K = \sum\limits_{a'} \left\langle x'' \right| e^{- i H (t - t_0) / \hbar} \left| a' \right\rangle \left\langle a' | x' \right\rangle = ...  
+\end{equation*}
+
+（4）$K$是格林函数（G.F.）
+
+与电动力学中给定电荷分布求电动势类比，
+
+\begin{equation}
+\phi(x) = \int d^3 x' \frac{\rho (x')}{ \left| x - x' \right| }
+\end{equation}
+
+这里$\phi(x)$和$\psi_\alpha (x'', t)$对应，$\rho(x')$和$\psi_\alpha (x', t_0)$对应，而$\frac{1}{ \left| x - x' \right| }$和传播子$K$对应，都是积分的核。
+
+$\frac{1}{ \left| x - x' \right| }$是微分方程$\nabla \cdot \nabla \frac{1}{ \left| x - x' \right| }  = \delta^3 (x- x')$的解，类似地$K$是如下方程的解，
+
+\begin{equation}
+\left[ i \hbar \frac{\partial }{\partial t} + \frac{\hbar^2}{ 2m} \nabla''^2 - V(x'')  \right] K = i \hbar \delta^3 (x'' - x') \delta (t - t_0)
+\end{equation}
+
+即：
+
+\begin{equation}
+\left[ i \hbar \frac{\partial }{\partial t} - H \right] K = i \hbar \delta^3 (x'' - x') \delta (t - t_0) 
+\end{equation}
+
+边条件是$t < t_0$时，$K = 0$。对应推迟解，或符合因果律的解（时间在前的影响时间在后的，而非相反）。
+
+$K$就是数学上的格林函数\index{Green Function：格林函数}（Green Function，G.F.），其定义为微分算子作用于格林函数等于德尔塔函数，即$\hat L G(x,s) = \delta(x-s)$。
+
+\subsection{态的求和}
+
+考虑$x'' = x'$，$t_0 = 0$，则$K (x', t ; x', 0)$
+
+定义格林函数为：
+
+\begin{equation}
+G(t) = \int d^3 x' K(x', t; x', 0) = ... = \sum\limits_{a'} e^{-i E_{a'} t / \hbar}
+\end{equation}
+
+如此定义的G.F.，就等于对所有量子态$a'$的求和（sum over states）。
+
+我们可以把$G(t)$与统计力学中的配分函数\index{partition function：配分函数}（partition function，Z）进行比较，
+
+\begin{equation}
+Z = \sum\limits_{a'} e^{- \beta E_{a'}}
+\end{equation}
+
+这两个式子都是对所有量子态$a'$的求和。
+
+引入虚时变换，
+
+\begin{equation}
+\beta = \frac{i t }{\hbar }
+\end{equation}
+
+这两个求和在数学上有相同的形式，这意味着我们在量子力学（量子场论）中发展出来的方法可以直接应用于量子统计。
+
+$G(t)$的宗量是时间，为了更方便地考察其中的物理，我们往往把时间宗量$t$变为能量宗量$E$（或频率宗量$\omega$，考虑到$E = \hbar \omega$，这其实是一回事）。
+
+\begin{equation}
+\widetilde{G} (E) = - \frac{i}{\hbar } \int_0^{\infty} dt G(t ) e^{i Et / \hbar}
+\end{equation}
+
+但这样积分积出来是不定的（存在$e^{i \infty}$的项），为了避免这个困难，我们把$E$拓展到复平面，并考虑变量变换$E \to E + i 0^+$，这样我们就得到，
+
+\begin{equation}
+\widetilde{G} (E) = \sum\limits_{a'} \frac{1}{ E - E_{a'}}
+\end{equation}
+
+这意味着我们只需研究格林函数$\widetilde{G} (E)$在复$E$平面的解析性质（奇点位置）就可知道给定物理系统的能谱$\{ E_{a'} \}$。
+
+\subsection{海森堡绘景下的传播子}
+
+传播子$K (x'',t; x',t_0) = \left\langle x'' \right| e^{- i H (t - t_0) / \hbar} \left| x' \right\rangle$是在薛定谔绘景（S.P.）下的定义。
+
+在海森堡绘景\index{Heisenberg Picture：海森堡绘景}下，利用$\left| a' , t \right\rangle = U^\dagger \left| a' \right\rangle$
+
+\begin{equation}
+K = \left\langle x'' \right| U(t) U^\dagger (t_0 ) \left| x' \right\rangle = \left\langle x'', t | x', t_0 \right\rangle
+\end{equation}
+
+传播子$K$即变换幅\index{Transition amplitude：变换幅}（Transition amplitude），$\left\langle x'', t | x', t_0 \right\rangle$的含义是“粒子”由$x', t_0$出发，传播到$x'', t$处的几率幅。
+
+\subsection*{参考}
+
+J. J. Sakurai, Modern Quantum Mechanics, \S 2.2 \S 2.5
