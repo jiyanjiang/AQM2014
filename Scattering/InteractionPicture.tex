@@ -1,0 +1,153 @@
+\section{相互作用绘景}
+
+\subsection{相互作用绘景}
+
+考虑含时的哈密顿，形式上分为两部分，和时间有关的部分归于相互作用$V(t)$
+
+\begin{equation}
+H = H_0 + V(t)
+\end{equation}
+
+假设$H_0$的本征值问题已知，
+
+\begin{equation}
+H_0 \left| n \right\rangle = E_n \left| n \right\rangle
+\end{equation}
+
+在$H_0$表象下，假设$t = 0$，系统处于$\left| i \right\rangle$的态，由于$\left| i \right\rangle$是$H_0$的本征态，而非$H$的本征态，并且$V(t) \neq 0$，我们研究的不再是定态（stationary state），随着时间的演化，那些$n \neq i$的量子态也可能被占据。
+
+假设量子态$\left| \alpha \right\rangle$，用$H_0$表象展开：
+
+\begin{equation}
+\left| \alpha \right\rangle = \sum\limits_n  \left| n \right\rangle \left\langle n | \alpha \right\rangle
+\end{equation}
+
+$t = 0$时，
+
+\begin{equation}
+\left| \alpha \right\rangle = \sum\limits_n c_n(0) \left| n \right\rangle
+\end{equation}
+
+$t > 0$时，
+
+\begin{equation}
+\left| \alpha, t \right\rangle = \sum\limits_n c_n(t) e^{- i E_n t / \hbar} \left| n \right\rangle
+\end{equation}
+
+这里$e^{- i E_n t / \hbar}$是$H_0$导致的，我们能否得到一种形式使$c_n (t)$只由相互作用$V(t)$决定。
+
+%\subsection{相互作用绘景}
+
+考虑变换：
+
+\begin{eqnarray}
+\left| \alpha, t \right\rangle_I & = & e^{i H_0 t /\hbar}  \left| \alpha, t \right\rangle_S\\
+V_I(t) & = & e^{i H_0 t /\hbar} V_S(t) e^{ - i H_0 t /\hbar}
+\end{eqnarray}
+
+这里脚标$I$表示相互作用绘景\index{Interaction Picture：相互作用绘景}，$S$表示薛定谔绘景。
+
+对某力学量A，
+
+\begin{equation}
+\left\langle A \right\rangle = {}_S\left\langle \alpha,t \right| e^{ - i H_0 t /\hbar} e^{i H_0 t /\hbar} A_S e^{ - i H_0 t /\hbar}   e^{i H_0 t /\hbar} \left| \alpha, t \right\rangle_S
+\end{equation}
+
+即：
+
+\begin{equation}
+\left\langle A \right\rangle = {}_S\left\langle \alpha, t \right| A_S \left| \alpha, t  \right\rangle_S = {}_I\left\langle \alpha, t \right| A_I \left| \alpha,t  \right\rangle_I
+\end{equation}
+
+容易证明：
+
+\begin{eqnarray}
+i \hbar \frac{\partial }{\partial t} \left| \alpha,t  \right\rangle_I & = & V_I(t) \left| \alpha,t  \right\rangle_I \\
+i \hbar \frac{d A_I}{dt}& = & [A_I(t) , H_0 ]
+\end{eqnarray}
+
+即在相互作用绘景下，态矢量$\left| \alpha,t  \right\rangle_I$随时间的演化将完全由相互作用$V_I(t)$决定，而算符$A_I(t)$随时间的演化将只由$H_0$决定。
+
+\subsection{拉比公式}
+
+考虑
+
+\begin{equation}
+i \hbar \frac{\partial }{\partial t} \left| \alpha,t  \right\rangle_I = V_I(t) \left| \alpha,t  \right\rangle_I
+\end{equation}
+
+左乘$\left\langle n \right|$，
+
+\begin{equation}
+i \hbar \frac{\partial }{\partial t}  \left\langle n  | \alpha,t  \right\rangle_I = \sum\limits_m \left\langle n \right| V_I(t) \left| m \right\rangle \left\langle m | \alpha,t  \right\rangle_I
+\end{equation}
+
+这里
+
+\begin{eqnarray*}
+\left\langle n \right| V_I(t) \left| m \right\rangle & = & \left\langle n \right| e^{iH_0t / \hbar} V e^{-iH_0t / \hbar} \left| m \right\rangle  \\
+ {} & = & \left\langle n \right| V \left| m \right\rangle e^{i(E_n - E_m)t / \hbar} \\
+{} & = & V_{nm} e^{i(E_n - E_m)t / \hbar}
+\end{eqnarray*}
+
+即
+
+\begin{equation}
+i \hbar \frac{\partial }{\partial t} c_n(t) = \sum\limits_m V_{nm} e^{i \omega_{nm} t} c_m(t)
+\end{equation}
+
+这里：$E_n - E_m = \hbar \omega_{nm}$。
+
+考虑双态系统：
+
+\begin{equation}
+H = H_0 + V(t) = \left( \begin{array}{cc} E_1 & \gamma e^{i \omega t} \\  \gamma e^{- i \omega t} & E_2  \end{array} \right)
+\end{equation}
+
+假设$t=0$时，$c_1 (0) = 1$，$c_2 (0) = 0$，即粒子全部位于“1”态。可求出$t$时，粒子位于“2”态的几率是：
+
+\begin{equation}
+|c_2(t)|^2 = \frac{\gamma^2 / \hbar^2}{\gamma^2 / \hbar^2 + (\omega - \omega_{21})^2 / 4} \sin^2 \left[ t \sqrt{ \frac{\gamma^2}{\hbar^2} + \frac{(\omega - \omega_{21})^2}{4} }    \right]
+\label{Rabi's formula}
+\end{equation}
+
+其中：$\omega_{21} = \frac{E_2 - E_1}{\hbar}$。公式[\ref{Rabi's formula}]即所谓拉比公式（Rabi's formula）。
+
+\subsection{戴逊级数}
+
+定义相互作用绘景下的演化算符$U_I(t, t_0)$，
+
+\begin{equation}
+\left| \alpha,t  \right\rangle_I = U_I(t, t_0) \left| \alpha,t_0 \right\rangle_I
+\end{equation}
+
+$U_I(t, t_0)$遵从如下微分方程：
+
+\begin{equation}
+i \hbar \frac{d}{dt } U_I (t, t_0) = V_I (t) U_I(t, t_0)
+\end{equation}
+
+假设初始条件：$U_I(t, t_0)|_{t = t_0} = 1$
+
+迭代一次，解出$U_I(t, t_0)$，
+
+\begin{equation}
+U_I(t, t_0) = 1 - \frac{i}{\hbar} \int_{t_0}^t dt' V_I(t') U_I (t', t_0) 
+\end{equation}
+
+反复迭代，
+
+\begin{eqnarray*}
+U_I(t, t_0) & = & 1 - \frac{i}{\hbar}\int_{t_0}^t dt' V_I(t') +  \\
+{} & {} & \left(\frac{-i}{\hbar} \right)^2 \int_{t_0}^t dt' \int_{t_0}^{t'} dt'' V_I (t') V_I(t'') + ... +  \\
+{} & {} &  \left(\frac{-i}{\hbar} \right)^n \int_{t_0}^t dt' \int_{t_0}^{t'} dt'' ... \int_{t_0}^{t^{(n-1)}} dt^{(n)} V_I(t') V_I (t'')... V_I(t^{(n)}) \\
+{} &  {}  & + ... 
+\end{eqnarray*}
+
+这就是所谓戴逊级数\index{Dyson Series：戴逊级数}（Dyson series）。
+
+由于不同时刻的$V_I$不一定是对易的，我们必须保证积分号里$V_I(t') V_I (t'')... V_I(t^{(n)}$各个时间的次序满足$t > t' > t'' > ... > t^{(n-1)} > t^{(n)} >... > t_0$。
+
+\subsection*{参考}
+
+J. J. Sakurai, Modern Quantum Mechanics, \S 5.5, 5.6

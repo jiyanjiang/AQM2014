@@ -1,0 +1,127 @@
+\section{含时散射的形式理论}
+
+\subsection{格林函数}
+
+上节中我们定义的$G^{(\pm)(x,x')}$是格林函数（G.F.）\index{Green Function：格林函数}。考虑，
+
+\begin{equation}
+(E - H_0)(E - H_0)^{-1}= 1
+\end{equation}
+
+为保证$(E - H_0)^{-1}$有定义，我们把$E$延拓到复数域，并把$(E - H_0)^{-1}$改写为$\frac{1}{E - H_0 \pm i \epsilon}$，
+
+\begin{equation}
+(E - H_0)\frac{1 }{E - H_0 \pm i \epsilon}= 1
+\end{equation}
+
+在位置表象下，上式的矩阵元：
+
+\begin{equation}
+(E - H_0(x) ) \left\langle x \right| \frac{1}{E - H_0 \pm i \epsilon } \left| x' \right\rangle = \left\langle x | x' \right\rangle
+\end{equation}
+
+对自由粒子，$E = \frac{\hbar^2 k^2 }{2m}$，$H_0 = -\frac{\hbar^2}{2m }\nabla^2$，上式可化为：
+
+\begin{equation}
+(k^2 + \nabla^2 ) G^{(\pm)}(x,x') = \delta^3 (x-x')
+\end{equation}
+
+上式求出即亥姆霍兹方程\index{Helmholtz Differential Equation：亥姆霍兹方程}（Helmholtz Differential Equation）\footnote{ $ ( \nabla^2 + k^2 ) \psi = 0 $}的G.F.。
+
+\begin{equation}
+G^{\pm}(x,x') = - \frac{1}{4 \pi} \frac{e^{\pm i k |x-x'|}}{|x-x'|}
+\end{equation}
+
+对$k=0$情形，退化为泊松方程\index{Poisson's Equation：泊松方程}（Poisson's Equation）\footnote{$\nabla^2 \psi = - 4 \pi \rho$}的G.F.（J. J. Sakurai, \S 2.5）。
+
+\subsection{含时散射}
+
+考虑含时的薛定谔方程
+
+\begin{equation}
+i \hbar \frac{\partial }{\partial t} \psi = H \psi
+\end{equation}
+
+这里$H = H_0 + V$，相互作用$V$含时。
+
+绝热（adiabatically）加场：
+
+\begin{equation}
+V = \lim\limits_{\eta \to 0} V e^{\eta t}
+\end{equation}
+
+我们可类似引入含时的格林函数：
+
+\begin{equation}
+\left( i \hbar \frac{\partial }{\partial t} - H_0 \right) G^{(+)} (t,t') = \delta(t - t')
+\label{TimeDependentGF}
+\end{equation}
+
+这里我们考虑推迟的边界条件（retarded boundary condition）
+
+\begin{equation}
+G^{(+)} (t , t') = 0 , t<t'
+\end{equation}
+
+即必须对$t > t'$，G.F.非0，我们尝试地把解写为：
+
+\begin{equation}
+G^{(+)} (t, t') = - \frac{i }{\hbar } \theta(t-t') e^{- i H_0 (t - t') / \hbar}
+\end{equation}
+
+其中：
+
+\begin{eqnarray*}
+i \hbar \frac{\partial }{\partial t} G^{(+)} (t, t') & = & \delta(t - t')e^{- i H_0 (t - t') / \hbar} - \frac{i }{\hbar} H_0 \theta(t-t')e^{- i H_0 (t - t') / \hbar}  \\
+{} & = & \delta(t - t') + H_0 G^{(+)}(t,t') 
+\end{eqnarray*}
+
+因此$G^{(+)}(t,t')$确实是符合方程[\ref{TimeDependentGF}]的解。
+
+现在$H$的解可形式地表示为：
+
+\begin{equation}
+\left| \psi^{(+)}; t \right\rangle = \left| \phi; t \right\rangle + \int_{- \infty}^{\infty} dt' G^{(+)} (t,t') V(t') \left| \psi^{(+)}; t' \right\rangle 
+\end{equation}
+
+这里：
+
+\begin{equation}
+\left( i \hbar \frac{\partial }{\partial t} - H_0  \right) \left| \phi , t \right\rangle = 0
+\end{equation}
+
+考虑到$t> t'$，
+
+\begin{equation}
+\int_{- \infty}^{\infty} dt' G^{(+)} \to \int_{- \infty}^t dt' G^{(+)} 
+\end{equation}
+
+绝热加场，$\left| \phi \right\rangle \to \left| \psi^+ \right\rangle$，在此过程中$E$不变，
+
+\begin{eqnarray}
+\left| \phi, t \right\rangle & = & \left| \phi \right\rangle e^{- i Et / \hbar} \\
+\left| \psi^{(+)}, t \right\rangle & = & \left| \psi^{(+)} \right\rangle e^{- i Et / \hbar}
+\end{eqnarray}
+
+$t = 0$时，$V(0) = V$
+
+\begin{equation}
+\left| \psi^{(+)} \right\rangle = \left| \phi \right\rangle - \frac{i }{\hbar} \int_{- \infty}^0 dt' e^{i H_0 t' / \hbar } e^{ - i Et' / \hbar } V(t') \left| \psi^{(+)} \right\rangle 
+\end{equation}
+
+考虑$V(t) = V e^{\eta t}$，
+
+\begin{eqnarray*}
+\left| \psi^{(+)} \right\rangle  & = & \left| \phi \right\rangle - \frac{i }{\hbar} \lim\limits_{t'' \to - \infty } \int_{t''}^0 dt' e^{i ( H_0 - E - i \eta \hbar ) t' / \hbar } V \left| \psi^{(+) } \right\rangle \\
+{} & = & \left| \phi \right\rangle - \frac{1}{H_0 - E - i \eta \hbar} \left[ 1 - \lim\limits_{t'' \to -\infty } e^{[ i(H_0 - E)/ \hbar + \eta  ] t''}  \right] V \left| \psi^{(+)} \right\rangle \\
+{} & = & \left| \phi \right\rangle + \frac{1}{E - H_0 + i \eta \hbar} V \left| \psi^{(+)} \right\rangle
+\end{eqnarray*}
+
+上式即李普曼-施温格方程\index{Lippmann-Schwinger equation：李普曼-施温格方程}。
+
+
+\subsection*{参考}
+
+J. J. Sakurai, Modern Quantum Mechanics, 7.11
+
+E. N. Economou, Green's Function in Quantum Physics (3rd Edition) 
