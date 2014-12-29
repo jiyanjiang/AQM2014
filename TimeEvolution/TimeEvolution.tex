@@ -1,0 +1,87 @@
+\section{时间演化}
+
+\subsection{时间演化算符}
+
+量子态$\alpha$，初始时刻$t_0$，记作$\left| \alpha, t_0 \right\rangle$，由此演化到$t$时刻（$t > t_0$）的量子态记作$\left| \alpha, t_0; t \right\rangle$。
+
+定义演化算符$U(t, t_0)$，把初始态和由$t_0$演化到$t$的态联系起来，
+
+\begin{equation}
+\left| \alpha, t_0; t \right\rangle = U(t, t_0) \left| \alpha, t_0 \right\rangle 
+\end{equation}
+
+这样的算符就叫时间演化算符。
+
+由时空的物理直觉出发，我们规定$U$应当满足的性质：
+
+（1）幺正性：初始时刻态矢量归一，则$t$时刻态矢量也要归一，即：
+
+\begin{equation}
+\left\langle \alpha, t_0 | \alpha, t_0 \right\rangle = \left\langle \alpha, t_0; t | \alpha, t_0; t \right\rangle = 1
+\end{equation}
+
+这意味着：
+
+\begin{equation}
+U^\dagger (t, t_0) U (t, t_0) = 1
+\end{equation}
+
+（2）合成性质：
+
+\begin{equation}
+U(t_2, t_0) = U(t_2, t_1) U (t_1, t_0)
+\end{equation}
+
+物理系统由时间$t_0$演化到$t_2$，必须要先经历$t_0$和$t_2$之间的$t_1$。
+
+（3）连续性：对无穷小时间演化$U(t_0+ dt, t_0)$，
+
+\begin{equation}
+\lim\limits_{dt \to 0} U(t_0 + dt, t_0) = 1
+\end{equation}
+
+我们可以验证，只要我们取无穷小时间演化算符\index{Infinitesimal time-evolution operator：无穷小时间演化算符}为如下形式，
+
+\begin{equation}
+U(t_0+dt, t_0) = 1- i \Omega dt
+\end{equation}
+
+其中$\Omega$是厄米算符，$\Omega^\dagger = \Omega $，以上性质即可自动得到满足。
+
+由于$\Omega$是厄米算符，$\Omega$可对应一力学量，其量纲为$\frac{1}{[Time]}$，即频率的量纲。类似前面在无穷小平移算符中所讨论过的，我们把$\Omega$改写为$\frac{H }{\hbar}$，$\hbar$是作用量（action）量纲$[Energy] [Time]$，那么$H$就是能量量纲，即哈密顿算符。这样，
+
+\begin{equation}
+U(dt ) = 1- \frac{i H dt}{\hbar}
+\end{equation}
+
+\subsection{薛定谔方程}
+
+由无穷小演化算符出发，我们可以推出薛定谔运动方程\index{Schr\"{o}dinger equation：薛定谔方程}（S.E.），首先由演化算符的合成性质：
+
+\begin{equation*}
+U(t+dt, t_0) = U(t+ dt , t) U(t, t_0) = \left( 1- \frac{i H dt}{\hbar}  \right) U(t, t_0)
+\end{equation*}
+
+调整一下等式左右两边的项：
+
+\begin{equation*}
+U(t+dt, t_0) - U(t, t_0) = -  i\frac{H}{\hbar} dt U(t, t_0)
+\end{equation*}
+
+就可得到演化算符$U$所满足的微分方程：
+
+\begin{equation}
+i \hbar \frac{\partial U(t, t_0) }{\partial t} = H U(t, t_0)
+\end{equation}
+
+右乘初始时刻态矢量$\left| \alpha, t_0 \right\rangle$，
+
+\begin{equation}
+i \hbar \frac{\partial }{\partial t} \left| \alpha, t_0; t \right\rangle  = H \left| \alpha, t_0; t \right\rangle
+\end{equation}
+
+这就是通常所说的薛定谔方程。
+
+\subsection*{参考}
+
+J. J. Sakurai, Modern Quantum Mechanics, \S 2.1
