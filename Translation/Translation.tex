@@ -1,0 +1,137 @@
+\section{平移算符}
+
+\subsection{无穷小平移算符}
+
+我们把无穷小平移\index{infinitesimal translation：无穷小平移}（infinitesimal translation）$T(dx')$定义为：
+
+\begin{equation}
+T(dx') \left| x' \right\rangle = \left| x' + dx' \right\rangle 
+\end{equation}
+
+效果上就是把位于$x'$附近的量子态平移到$x'+ dx'$位置附近。
+
+根据物理上我们对空间的直觉，我们规定$T$应满足如下性质：
+
+（1）幺正性：
+
+平移不改变粒子数：$\left\langle \alpha | \alpha \right\rangle = \left\langle \alpha \right| T^\dagger T \left| \alpha \right\rangle  $，即要求：
+
+\begin{equation}
+T^\dagger (dx') T (dx') = 1
+\end{equation}
+
+（2）对连续的平移操作满足：
+
+\begin{equation}
+T( dx'' ) T (dx') = T(dx'' + dx')
+\end{equation}
+
+（3）逆操作就是反方向平移：
+
+\begin{equation}
+T^{-1} (dx') = T(- d x')
+\end{equation}
+
+（4）连续性：
+
+\begin{equation}
+\lim\limits_{dx' \to 0} T(dx') = 1
+\end{equation}
+
+可以证明，假如$T(dx')$取如下形式，
+
+\begin{equation}
+T(dx' ) = 1 - i K \cdot dx'
+\end{equation}
+
+并且算符$K$是厄米的（$K^\dagger = K$），以上四条性质将自动满足。
+
+由于$K$是厄米算符，根据量子力学它可对应某个力学量，其量纲为$\frac{1}{[ Length ]}$。
+
+物理学首先在人的日常经验中被研究，所以最初的单位制是适合于人本身的尺度的，比如长度是米，时间是秒，质量是千克。而量子力学对应的是原子尺寸的物理现象，这样就涉及到一个换算的问题。$K$常被写为$\frac{p}{\hbar}$，这里$\hbar$是普朗克常数，量纲为$[Energy] [Time]$，$\hbar$很小，就是因为日常世界和量子世界尺度的不同引入的换算因子，因为如果我们首先发展的是量子力学我们本可以取$\hbar = 1$的。
+
+现在$p$就对应某个力学量，其量纲为$\frac{[E] [T]}{[L]} = [M] \frac{[L]}{[T]}$，即动量的量纲。这样我们就把动量算符\index{momentum operator：动量算符}定义为无穷小平移算符的产生算符。
+
+\begin{equation}
+T(dx') = 1 - i \frac{p \cdot dx'}{ \hbar }
+\end{equation}
+
+\subsection{基础对易式}
+
+我们可由无穷小平移算符$T(dx')$的表达式出发推出基础对易式\index{fundamental commutation relation：基础对易式}$[x, p_x] = i \hbar$。
+
+首先计算对易式$[x, T(dx')]$，
+
+\begin{eqnarray*}
+x T (dx') \left| x' \right\rangle & = & (x' + dx' ) \left| x'+ dx' \right\rangle \\
+T(dx' ) x \left| x' \right\rangle & = & x' T(dx') \left| x' \right\rangle = x' \left| x' + dx' \right\rangle
+\end{eqnarray*}
+
+由于$dx' \to 0$，以下计算只需要考虑$dx'$的一阶小量即可。得到，
+
+\begin{equation}
+[x, T(dx')] = dx'
+\end{equation}
+
+将上式展开：
+
+\begin{equation}
+- i x K \cdot dx' + i K \cdot dx' x = dx'
+\end{equation}
+
+需要注意的是以上$x$，$K$和$dx'$均是矢量（算符）。
+
+假设$d \vec x'$在第1个方向上，即：$d \vec x' = d \vec x' \hat x_1 $，$\vec K \cdot d \vec x' = K_1 dx'$。
+
+\begin{eqnarray*}
+x_1 K_1 - K_1 x_1 & = & i \\
+x_2 K_1 - K_1 x_2 & = & 0 \\
+x_3 K_1 - K_1 x_3 & = & 0
+\end{eqnarray*}
+
+我们还可以取$d \vec x'$在第2个方向或第3个方向上。这样我们就得到：
+
+\begin{equation}
+[x_i , K_j ] = i \delta_{ij}
+\end{equation}
+
+$i$，$j$分别都可取1，2，3对应三维物理空间。我们还可把上式改写为以下常见的形式：
+
+\begin{equation}
+[x_i , p_j ] = i \hbar \delta_{ij}
+\end{equation}
+
+即基础对易式\index{fundamental commutation relation：基础对易式}（fundamental commutation relations）。
+
+\subsection{动量算符}
+
+由无穷小平移算符出发，
+
+\begin{eqnarray*}
+\left( 1- \frac{i p \Delta x'}{\hbar}  \right) \left| \alpha \right\rangle & = & \int dx' T(\Delta x') \left| x' \right\rangle \left\langle x' | \alpha \right\rangle \\
+ {} & = & \int dx' \left| x' + \Delta x' \right\rangle \left\langle x' | \alpha \right\rangle  \\
+ {} & = & \int dx' \left| x' \right\rangle \left\langle x- \Delta x' | \alpha \right\rangle \\
+ {} & = & \int dx' \left| x' \right\rangle \left( \left\langle x' | \alpha \right\rangle - \Delta x' \frac{\partial }{\partial x'}  \left\langle x' | \alpha \right\rangle \right)
+\end{eqnarray*}
+
+即，
+
+\begin{equation}
+p \left| \alpha \right\rangle = \int dx' \left| x' \right\rangle \left( \frac{\hbar}{i} \frac{\partial }{\partial x'} \left\langle x' | \alpha \right\rangle  \right)
+\end{equation}
+
+左乘$\left\langle x' \right|$，可得：
+
+\begin{equation}
+\left\langle x' \right| p \left| \alpha \right\rangle = \frac{\hbar}{i } \frac{\partial }{\partial x'} \left\langle x' | \alpha \right\rangle
+\end{equation}
+
+如果把$\left| \alpha \right\rangle$替换为$\left| x'' \right\rangle$，就得到动量算符\index{momentum operator：动量算符}在位置表象下的矩阵表示：
+
+\begin{equation}
+\left\langle x' \right| p \left| x'' \right\rangle = \frac{\hbar}{i } \frac{\partial }{\partial x'} \left\langle x' | x'' \right\rangle = \frac{\hbar}{i } \frac{\partial }{\partial x'} \delta(x' - x'')
+\end{equation}
+
+\subsection*{参考}
+
+J. J. Sakurai, Modern Quantum Mechanics, \S 1.6
