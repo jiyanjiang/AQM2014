@@ -1,7 +1,33 @@
-AQM notes for USTB, 2014
+量子力学II
 
-16 lectures
+@季燕江
 
-JI, Yanjiang
+北京科技大学物理学系
 
-Git is a free software.
+本讲稿（读书笔记）基于樱井教授所著的《现代量子力学》（J J Sakurai, Modern Quantum Mechanics, Revised Edition）
+
+Contents
+
+1.斯特恩-盖拉赫实验
+
+2.平移算符
+
+3.时间演化
+
+4.传播子
+
+5.路径积分
+
+6.转动和角动量
+
+7.角动量相加
+
+8.对称性
+
+9.时间反演对称
+
+10.相互作用绘景
+
+11.散射的形式理论
+
+12.含时散射的形式理论
